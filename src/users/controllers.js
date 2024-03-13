@@ -13,8 +13,8 @@ const signupUser = async (req, res) => {
     });
     const plainTextPassword = req.body.password;
     const hashPass = async () => {
-      let hash = await bcrypt.hash(plainTextPassword, saltRounds);
-      console.log(hash);
+      let hashPassword = await bcrypt.hash(plainTextPassword, saltRounds);
+      console.log(hashPassword);
     };
     hashPass();
     res.status(201).json({ message: "user added", user: user });
